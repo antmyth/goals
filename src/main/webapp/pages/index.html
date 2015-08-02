@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>some title</title>
+</head>
+<body>
+<script src="/scripts/jquery-2.1.4.min.js"></script>
+<h1>YO DUDE4</h1>
+<div class="out"></div>
+<script>
+var response = ""
+        $.get( "../services/goal", function(r){
+        response = r
+            $( "div.out" ).text(JSON.stringify(r));
+            console.log( " : " + r );
+
+        } );
+        for (index = 0; index < response.length; ++index) {
+        $("<div><p>"+response[index].name+"</p></div>").appendTo("div.out")
+    console.log(response[index]);
+}
+</script>
+</body>
+</html>
